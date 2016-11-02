@@ -135,7 +135,7 @@ CREATE TABLE IF NOT EXISTS `tb_transacoes` (
   `transacao_id` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `transacao_competencia` date NOT NULL,
   `conta_id` int(11) DEFAULT NULL,
-  `conta_forma_rateio_id` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `conta_forma_rateio_id` varchar(2) COLLATE utf8_unicode_ci NULL,
   `transacao_data_pagamento` date NOT NULL,
   `transacao_tipo` varchar(3) COLLATE utf8_unicode_ci NOT NULL COMMENT '[D]ebito / [C]redito',
   `transacao_valor` decimal(12,2) NOT NULL,
