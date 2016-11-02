@@ -1,11 +1,27 @@
+--
+-- Extraindo dados da tabela `tb_usuarios`
+--
+
 INSERT INTO `tb_usuarios` (`usuario_id`, `usuario_nome`) VALUES
 (1, 'Usuário 1'),
 (2, 'Usuário 2'),
 (3, 'Usuário 3'),
 (4, 'Usuário 4');
 
+--
+-- Extraindo dados da tabela `tb_divisoes`
+--
+
 INSERT INTO `tb_divisoes` (`divisao_id`, `divisao_nome`, `usuario_id`) VALUES
 (1, 'República XPTO', 1);
+
+--
+-- Extraindo dados da tabela `tb_contas`
+--
+
+--
+-- Extraindo dados da tabela `tb_integrantes`
+--
 
 INSERT INTO `tb_integrantes` (`integrante_id`, `divisao_id`, `usuario_id`, `inicio_divisao`) VALUES
 (1, 1, 1, '2016-09-01'),
@@ -13,12 +29,22 @@ INSERT INTO `tb_integrantes` (`integrante_id`, `divisao_id`, `usuario_id`, `inic
 (3, 1, 3, '2016-09-01'),
 (4, 1, 4, '2016-10-01');
 
+
+--
+-- Extraindo dados da tabela `tb_contas`
+--
+
 INSERT INTO `tb_contas` (`conta_id`, `divisao_id`, `conta_forma_rateio_id`, `conta_nome`) VALUES
 (1, 1, 'I', 'Energia Elétrica'),
 (2, 1, 'I', 'Gás'),
 (3, 1, 'P', 'Aluguel '),
 (4, 1, 'I', 'Internet'),
 (5, 1, 'I', 'Compras Mercado');
+
+
+--
+-- Extraindo dados da tabela `tb_contas_rateio`
+--
 
 INSERT INTO `tb_contas_rateio` (`conta_rateio_id`, `conta_id`, `integrante_id`, `conta_rateio_valor_base_padrao`) VALUES
 (1, 3, 1, 30.000000),
@@ -43,6 +69,9 @@ INSERT INTO `tb_contas_rateio` (`conta_rateio_id`, `conta_id`, `integrante_id`, 
 (20, 5, 4, NULL);
 
 
+--
+-- Extraindo dados da tabela `tb_transacoes`
+--
 
 INSERT INTO `tb_transacoes` (`transacao_id`, `transacao_competencia`, `conta_id`, `conta_forma_rateio_id`, `transacao_data_pagamento`, `transacao_tipo`, `transacao_valor`, `transacao_observacao`) VALUES
 ('{2f2ef3e5-ff74-455a-b3d0-e7fd9ee95f6e}', '2016-09-01', 2, 'I', '2016-09-14', 'D', '9.15', ''),
@@ -50,6 +79,12 @@ INSERT INTO `tb_transacoes` (`transacao_id`, `transacao_competencia`, `conta_id`
 ('{680d055e-c5e2-487a-ad51-4cc4ae204ed1}', '2016-09-01', 1, 'I', '2016-09-07', 'D', '125.52', ''),
 ('{7cdb7f9b-1c9e-402f-80f2-ec3b891bcab2}', '2016-09-01', 5, 'I', '2016-09-26', 'D', '26.95', ''),
 ('{a15b5a66-536e-4176-ad99-da83338c2e18}', '2016-09-01', 4, 'I', '2016-09-26', 'D', '79.90', '');
+
+-- --------------------------------------------------------
+
+--
+-- Extraindo dados da tabela `tb_transacoes_detalhe`
+--
 
 INSERT INTO `tb_transacoes_detalhe` (`transacao_detalhe_id`, `transacao_id`, `integrante_id`, `transacao_detalhe_valor_pago`, `transacao_detalhe_divisao`) VALUES
 (1, '{2f2ef3e5-ff74-455a-b3d0-e7fd9ee95f6e}', 1, 9.15, NULL),
@@ -67,5 +102,10 @@ INSERT INTO `tb_transacoes_detalhe` (`transacao_detalhe_id`, `transacao_id`, `in
 (13, '{a15b5a66-536e-4176-ad99-da83338c2e18}', 1, 79.90, NULL),
 (14, '{a15b5a66-536e-4176-ad99-da83338c2e18}', 2, 0.00, NULL),
 (15, '{a15b5a66-536e-4176-ad99-da83338c2e18}', 3, 0.00, NULL);
+
+-- --------------------------------------------------------
+
+
+
 
 
